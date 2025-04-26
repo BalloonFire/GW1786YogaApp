@@ -1,1 +1,0 @@
-C:\AndroidProjects\YogaApp\YogaApp\YogaApp.csproj;x64
