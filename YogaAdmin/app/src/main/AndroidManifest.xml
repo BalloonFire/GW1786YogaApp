@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32" />
+
+
+    <application
+        android:name=".YogaAdminApp"
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.YogaAdmin"
+        tools:targetApi="31">
+        <provider
+            android:name="androidx.startup.InitializationProvider"
+            android:authorities="${applicationId}.androidx-startup"
+            android:exported="false"
+            tools:node="merge">
+            <meta-data
+                android:name="androidx.work.WorkManagerInitializer"
+                android:value="androidx.startup"
+                tools:node="remove" />
+        </provider>
+        <activity
+            android:name=".setting.SettingActivity"
+            android:exported="false" />
+        <activity
+            android:name=".course.CreateYogaCourse"
+            android:exported="false" />
+        <activity
+            android:name=".course.EditYogaCourse"
+            android:exported="false" />
+        <activity
+            android:name=".course.CourseInfoActivity"
+            android:parentActivityName=".MainActivity"/>
+        <activity
+            android:name=".schedule.CourseScheduleActivity"
+            android:parentActivityName=".course.CourseInfoActivity"/>
+        <activity
+            android:name=".schedule.CreateSchedule"
+            android:parentActivityName=".schedule.CourseScheduleActivity"/>
+        <activity
+            android:name=".schedule.EditSchedule"
+            android:parentActivityName=".schedule.CourseScheduleActivity"/>
+        <activity
+            android:name=".search.SearchActivity"
+            android:exported="false" />
+        <activity
+            android:name=".teacher.TeacherActivity"
+            android:exported="false" />
+        <activity
+            android:name=".teacher.CreateTeacher"
+            android:parentActivityName=".teacher.TeacherActivity"/>
+        <activity
+            android:name=".teacher.EditTeacher"
+            android:parentActivityName=".teacher.TeacherActivity"/>
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

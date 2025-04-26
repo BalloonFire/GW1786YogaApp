@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">YogaAdmin</string>
+    <string-array name="day_of_week">
+        <item>Monday</item>
+        <item>Tuesday</item>
+        <item>Wednesday</item>
+        <item>Thursday</item>
+        <item>Friday</item>
+        <item>Saturday</item>
+        <item>Sunday</item>
+    </string-array>
+    <string name="select_teacher_prompt">Select a teacher</string>
+    <string-array name="yoga_type">
+        <item>Flow Yoga</item>
+        <item>Aerial Yoga</item>
+        <item>Family Yoga</item>
+        <item>Sweat Yoga</item>
+    </string-array>
+    <string-array name="search_types">
+        <item>Teachers</item>
+        <item>Courses</item>
+    </string-array>
+    <string-array name="sort_orders">
+        <item>Newest First</item>
+        <item>Oldest First</item>
+    </string-array>
+    <string name="edit">Edit</string>
+    <string name="delete">Delete</string>
+</resources>

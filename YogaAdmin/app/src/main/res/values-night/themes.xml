@@ -1,0 +1,12 @@
+<resources>
+    <!-- Dark theme inherits from the light theme and only overrides what's different -->
+    <style name="Theme.YogaAdmin" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <!-- You can override specific colors for dark mode here if needed -->
+        <item name="colorPrimary">@color/blue_700</item>  <!-- Darker blue for dark mode -->
+        <item name="colorPrimaryVariant">@color/blue_900</item>  <!-- Even darker blue -->
+
+        <!-- Keep the same action bar styles -->
+        <item name="actionBarStyle">@style/YogaAdminActionBar</item>
+        <item name="actionBarTheme">@style/ThemeOverlay.YogaAdmin.ActionBar</item>
+    </style>
+</resources>
