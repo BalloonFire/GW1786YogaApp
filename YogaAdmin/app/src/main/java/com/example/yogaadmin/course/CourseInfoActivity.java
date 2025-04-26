@@ -101,6 +101,12 @@ public class CourseInfoActivity extends BaseActivity {
         Button btnDelete = findViewById(R.id.btnDeleteCourse);
 
         setClickCooldown(btnViewSchedule, btnEdit, btnDelete);
+
+        btnDelete.setOnClickListener(v -> {
+            if (isClickAllowed()) {
+                showDeleteConfirmationDialog();
+            }
+        });
     }
 
     @Override
@@ -110,9 +116,18 @@ public class CourseInfoActivity extends BaseActivity {
             handleViewSchedule();
         } else if (id == R.id.btnEditCourse) {
             handleEditCourse();
-        } else if (id == R.id.btnDeleteCourse) {
-            handleDeleteCourse();
         }
+    }
+
+    private void showDeleteConfirmationDialog() {
+        new AlertDialog.Builder(this)
+                .setTitle("Delete Course")
+                .setMessage("Are you sure you want to delete this course? This will also delete all related schedules.")
+                .setPositiveButton("Delete", (dialog, which) -> {
+                    performCourseDeletion();
+                })
+                .setNegativeButton("Cancel", null)
+                .show();
     }
 
     private void handleViewSchedule() {
@@ -125,19 +140,6 @@ public class CourseInfoActivity extends BaseActivity {
         Intent intent = new Intent(this, EditYogaCourse.class);
         intent.putExtra("course_id", course.getId());
         editCourseLauncher.launch(intent);
-    }
-
-    private void handleDeleteCourse() {
-        new AlertDialog.Builder(this)
-                .setTitle("Delete Course")
-                .setMessage("Are you sure you want to delete this course? This will also delete all related schedules.")
-                .setPositiveButton("Delete", (dialog, which) -> {
-                    if (isClickAllowed()) {
-                        performCourseDeletion();
-                    }
-                })
-                .setNegativeButton("Cancel", null)
-                .show();
     }
 
     private void performCourseDeletion() {
