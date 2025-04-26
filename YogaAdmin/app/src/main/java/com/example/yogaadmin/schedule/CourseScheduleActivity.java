@@ -19,6 +19,7 @@ import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 
 import com.example.yogaadmin.BaseActivity;
+import com.example.yogaadmin.BottomHeader;
 import com.example.yogaadmin.CloudFirebaseSync;
 import com.example.yogaadmin.DatabaseHelper;
 import com.example.yogaadmin.R;
@@ -35,6 +36,7 @@ public class CourseScheduleActivity extends BaseActivity {
     private ActivityResultLauncher<Intent> createScheduleLauncher;
     private ActivityResultLauncher<Intent> editScheduleLauncher;
     private Button btnAddSchedule;
+    private BottomHeader bottomHeader;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,6 +81,12 @@ public class CourseScheduleActivity extends BaseActivity {
 
         setupViews();
         refreshScheduleList();
+        setupBottomNavigation();
+    }
+
+    private void setupBottomNavigation() {
+        bottomHeader = new BottomHeader(this);
+        bottomHeader.setupBottomNavigation();
     }
 
     private void setupViews() {
