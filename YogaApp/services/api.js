@@ -3,7 +3,7 @@ import { getDatabase, ref, get, query, orderByChild, equalTo } from 'firebase/da
 
 // Your Firebase config (replace with your actual config)
 const firebaseConfig = {
-  apiKey: "AIzaSyC4em78E3MD4XYWepbvEtS764AOY5YAEAQ",
+  apiKey: "api_key_here",
   authDomain: "https://yogaadminapp-f8f6a-default-rtdb.firebaseio.com",
   projectId: "yogaadminapp-f8f6a",
   storageBucket: "yogaadminapp-f8f6a.firebasestorage.app",
